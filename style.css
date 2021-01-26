@@ -1,0 +1,31 @@
+.masthead {
+    font-size: 30px;
+    text-align: center;
+    background-color: aquamarine;
+    height: 80px;
+}
+#test-area {
+    color: rgb(245, 243, 240);
+    font-size: 38px;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    border-radius: 6px;
+    border: 5px solid;
+    background-color: rgb(12, 11, 11);
+}
+.test-wrapper {
+    text-align: center;
+}
+#reset {
+    font-size: 48px;
+    border-radius: 15px;
+    background-color: rgb(181, 131, 216);
+    position: absolute;
+}
+.timer {
+    font-size: 60px;
+    justify-content: center;
+    text-align: center;
+    padding: 0%;
+}

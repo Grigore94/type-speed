@@ -6,6 +6,7 @@ const theTimer = document.querySelector(".timer");
 
 var timer = [0,0,0,0];
 var interval;
+var timerRunns = false;
 
 function leadinZero(time) {
     if(time <= 9) {
@@ -32,12 +33,12 @@ function spellCheck() {
     if(textEntered == originText) {
         //clearing interval
         clearInterval(inteval);
-        textWrapper.style.borderColor = "red";  
+        textWrapper.style.borderColor = "#429890";  
    } else {
        if(textEntered == originTextMatch) {
-           textWrapper.style.borderColor = "blue";
+           textWrapper.style.borderColor = "#65CCF3";
        } else {
-        textWrapper.style.borderColor = "yellow";
+        textWrapper.style.borderColor = "#E95D0F";
    } 
 }
 
@@ -45,14 +46,22 @@ function spellCheck() {
 //start
 function start() {
     let textEnteredLength = testArea.value.length;
-    if(textEnteredLength === 0) {
+    if(textEnteredLength === 0 && !timerRunns) {
+        timerRunns = true;
         interval = setInterval(runTimer,10)
     }
     console.log(textEnteredLength)
 }
 //reset
 function reset(){
-    console.log("reset button pressed")
+    clearInterval(interval);
+    interval = null;
+    timer = [0,0,0,0];
+    timerRunns = false;
+    
+    testArea.value = "";
+    theTimer.innerHTML = "00:00:00";
+    textWrapper.style.borderColor = "grey";
 }
 
 testArea.addEventListener("keypress", start, false);
